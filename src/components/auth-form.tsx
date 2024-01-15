@@ -13,7 +13,7 @@ export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // this is callback url after login
-  const callbackUrl = "http://localhost:3000/dashboard";
+  const callbackUrl = "http://localhost:8080/dashboard";
 
   const login = async (provider: string) => {
     setIsLoading(true);
