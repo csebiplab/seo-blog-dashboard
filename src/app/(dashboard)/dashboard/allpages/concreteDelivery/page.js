@@ -20,7 +20,7 @@ export default page;
 
 const getConcreteDeliveryMetaData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/concreteDelivery", {
+    const res = await fetch("http://localhost:8080/api/concreteDelivery", {
       cache: "no-store",
     });
 

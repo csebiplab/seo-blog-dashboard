@@ -18,7 +18,7 @@ export default page;
 
 const getHomeMetaData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/home", {
+    const res = await fetch("http://localhost:8080/api/home", {
       cache: "no-store",
     });
 

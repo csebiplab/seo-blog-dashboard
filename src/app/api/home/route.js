@@ -5,6 +5,7 @@ import homeRouteMetaData from "../../../models/homeMetaDataFile";
 export async function POST(request) {
   try {
     const { title, description, keywords } = await request.json();
+    // console.log(title, description, keywords)
     await connectMongoDB();
     await homeRouteMetaData.create({
       title,

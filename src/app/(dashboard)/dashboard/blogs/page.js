@@ -13,7 +13,7 @@ export default async function page() {
 
 const getAllBlogsData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/blogContent", {
+    const res = await fetch("http://localhost:8080/api/blogContent", {
       cache: "no-store",
     });
 

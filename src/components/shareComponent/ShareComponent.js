@@ -77,7 +77,7 @@ const ShareComponent = ({
     } else {
       let { title, description, keywords } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/${endPoints}`, {
+        const res = await fetch(`http://localhost:8080/api/${endPoints}`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
