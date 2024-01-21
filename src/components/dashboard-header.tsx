@@ -20,12 +20,12 @@ export default async function DashboardHeader({
     <header
       className={cn(
         "w-full sticky top-0 z-50 px-5 py-4 bg-transparent gap-2 backdrop-blur-sm flex flex-row justify-between items-center",
-        className,
+        className
       )}
       {...props}
     >
       <h1 className="text-xl font-medium flex-1">{title}</h1>
-      <ThemeToggle  className="hidden max-md:flex"/>
+      <ThemeToggle className="hidden max-md:flex" />
       <MobileNav />
       <UserAccountNav
         user={{

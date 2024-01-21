@@ -10,7 +10,7 @@ export default async function siteMap() {
 
 const getSitemapData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/siteMap", {
+    const res = await fetch("http://localhost:8080/api/siteMap", {
       cache: "no-store",
     });
 

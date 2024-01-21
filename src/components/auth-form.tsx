@@ -1,22 +1,31 @@
 "use client";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useState } from "react";
 import { Icons } from "./icons";
 
+const socialLoginProviders: { GITHUB: string } = {
+  GITHUB: "github",
+};
+
 export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const login = async () => {
+
+  // this is callback url after login
+  const callbackUrl = "http://localhost:8080/dashboard";
+
+  const login = async (provider: string) => {
     setIsLoading(true);
-    await signIn("github", {
-      redirect: false,
-      callbackUrl: "/dashboard",
-    });
+    await signIn(provider, { callbackUrl });
     setIsLoading(false);
   };
+
   return (
-    <Button className="flex flex-row gap-2" onClick={login}>
+    <Button
+      className="flex flex-row gap-2"
+      onClick={() => login(socialLoginProviders.GITHUB)}
+    >
       {isLoading ? (
         <Icons.spinner size={20} className="animate-spin" />
       ) : (

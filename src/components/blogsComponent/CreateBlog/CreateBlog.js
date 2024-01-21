@@ -156,7 +156,7 @@ function CreateBlog({ id, data }) {
         </div>
         <button
           onClick={handleSubmit}
-          class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 my-5 px-5 border border-blue-500 hover:border-transparent rounded"
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 my-5 px-5 border border-blue-500 hover:border-transparent rounded"
         >
           {id ? "Update" : "Create"}
         </button>

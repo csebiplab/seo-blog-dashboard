@@ -19,7 +19,7 @@ export default page;
 
 const getContactMetaData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/contactUs", {
+    const res = await fetch("http://localhost:8080/api/contactUs", {
       cache: "no-store",
     });
 

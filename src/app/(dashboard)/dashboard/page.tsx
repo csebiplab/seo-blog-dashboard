@@ -1,6 +1,7 @@
 import DashboardHeader from "@/components/dashboard-header";
 import DashboardShell from "@/components/shell";
 import { totalMembersData } from "@/lib/data";
+import getCurrentUser from "@/lib/session";
 import {
   Card,
   Text,
@@ -11,7 +12,7 @@ import {
   AreaChart,
 } from "@tremor/react";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <div className="flex lg:flex-row gap-4 flex-col px-5">

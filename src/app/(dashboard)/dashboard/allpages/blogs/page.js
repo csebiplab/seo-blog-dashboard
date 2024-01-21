@@ -20,7 +20,7 @@ export default page;
 
 const getBlogMetaData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/blogs", {
+    const res = await fetch("http://localhost:8080/api/blogs", {
       cache: "no-store",
     });
 

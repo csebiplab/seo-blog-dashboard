@@ -82,7 +82,7 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
         {/* <h3>BLogs</h3> */}
         {sitemap?.length > 0 && !id ? (
           <>
-            <div class="relative mt-4 overflow-x-auto shadow-md sm:rounded-lg">
+            <div className="relative mt-4 overflow-x-auto shadow-md sm:rounded-lg">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
@@ -173,7 +173,7 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
             </div>
             <button
               onClick={handleSubmit}
-              class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 my-5 px-5 border border-blue-500 hover:border-transparent rounded"
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 my-5 px-5 border border-blue-500 hover:border-transparent rounded"
             >
               {id ? "Update" : "Save"}
             </button>

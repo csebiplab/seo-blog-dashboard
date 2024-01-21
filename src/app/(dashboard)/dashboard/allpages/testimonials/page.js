@@ -18,7 +18,7 @@ export default page;
 
 const getTestimonialMetaData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/testimonials", {
+    const res = await fetch("http://localhost:8080/api/testimonials", {
       cache: "no-store",
     });
 

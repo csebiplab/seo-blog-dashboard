@@ -10,7 +10,7 @@ export default async function SeoSiteVerification() {
 
 const getVerificationData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/verificationUrl", {
+    const res = await fetch("http://localhost:8080/api/verificationUrl", {
       cache: "no-store",
     });
 

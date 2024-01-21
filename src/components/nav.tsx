@@ -37,7 +37,7 @@ const MenuItem = ({ item, key }) => {
   const toggleSubMenu = () => {
     setSubMenuOpen(!subMenuOpen);
   };
-  console.log("item for dashboard nav", item);
+  // console.log("item for dashboard nav", item);
   const IconOne = Icons[item?.icon];
   return (
     <div className="">
