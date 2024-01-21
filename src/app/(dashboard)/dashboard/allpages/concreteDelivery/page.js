@@ -1,4 +1,5 @@
 import ShareComponent from "../../../../../components/shareComponent/ShareComponent";
+
 const page = async () => {
   const editRoute = "dashboard/allpages/concreteDelivery/editConcreteDelivery";
   const endPoints = "concreteDelivery";
@@ -19,8 +20,9 @@ const page = async () => {
 export default page;
 
 const getConcreteDeliveryMetaData = async () => {
+  const baseAPIUrl = process.env.BASE_API_URL;
   try {
-    const res = await fetch("http://localhost:8080/api/concreteDelivery", {
+    const res = await fetch(`${baseAPIUrl}/api/concreteDelivery`, {
       cache: "no-store",
     });
 

@@ -9,9 +9,11 @@ export default function RemoveBtnComponent({ id }) {
   const removeTopic = async () => {
     const confirmed = confirm("Are you sure?");
 
+    const baseAPIUrl = process.env.BASE_API_URL
+
     if (confirmed) {
       const res = await fetch(
-        `http://localhost:3000/api/verificationUrl?id=${id}`,
+        `${baseAPIUrl}/api/verificationUrl?id=${id}`,
         {
           method: "DELETE",
         }

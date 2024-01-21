@@ -18,8 +18,9 @@ const page = async () => {
 export default page;
 
 const getContactMetaData = async () => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch("http://localhost:8080/api/contactUs", {
+    const res = await fetch(`${baseAPIUrl}/api/contactUs`, {
       cache: "no-store",
     });
 

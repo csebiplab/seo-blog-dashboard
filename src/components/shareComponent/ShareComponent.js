@@ -21,6 +21,8 @@ const ShareComponent = ({
     keywords: "",
   });
 
+  const baseAPIUrl = process.env.BASE_API_URL
+
   useEffect(() => {
     setInputValue({
       title: titleValue,
@@ -54,7 +56,7 @@ const ShareComponent = ({
       let { title, description, keywords } = inputValue;
       try {
         const res = await fetch(
-          `http://localhost:3000/api/${endPoints}/${id}`,
+          `${baseAPIUrl}/api/${endPoints}/${id}`,
           {
             method: "PUT",
             headers: {
@@ -77,7 +79,7 @@ const ShareComponent = ({
     } else {
       let { title, description, keywords } = inputValue;
       try {
-        const res = await fetch(`http://localhost:8080/api/${endPoints}`, {
+        const res = await fetch(`${baseAPIUrl}/api/${endPoints}`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

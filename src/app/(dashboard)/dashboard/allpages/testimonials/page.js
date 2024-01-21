@@ -17,8 +17,9 @@ const page = async () => {
 export default page;
 
 const getTestimonialMetaData = async () => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch("http://localhost:8080/api/testimonials", {
+    const res = await fetch(`${baseAPIUrl}/api/testimonials`, {
       cache: "no-store",
     });
 

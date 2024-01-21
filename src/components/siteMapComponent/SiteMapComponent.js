@@ -11,6 +11,9 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
     title: "",
     url: "",
   });
+
+  const baseAPIUrl = process.env.BASE_API_URL
+
   useEffect(() => {
     setInputValue({
       title: titleValue,
@@ -35,7 +38,7 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
     if (id) {
       let { title, url } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/siteMap/${id}`, {
+        const res = await fetch(`${baseAPIUrl}/api/siteMap/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json",
@@ -56,7 +59,7 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
     } else {
       let { title, url } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/siteMap`, {
+        const res = await fetch(`${baseAPIUrl}/api/siteMap`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

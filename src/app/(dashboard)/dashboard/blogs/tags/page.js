@@ -11,8 +11,9 @@ export default async function page() {
 }
 
 const getAllTagData = async () => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch("http://localhost:3000/api/blogTag", {
+    const res = await fetch(`${baseAPIUrl}/api/blogTag`, {
       cache: "no-store",
     });
 

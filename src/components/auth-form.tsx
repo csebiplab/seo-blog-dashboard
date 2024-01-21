@@ -12,8 +12,10 @@ const socialLoginProviders: { GITHUB: string } = {
 export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const baseAPIUrl = process.env.BASE_API_URL;
+
   // this is callback url after login
-  const callbackUrl = "http://localhost:8080/dashboard";
+  const callbackUrl = `${baseAPIUrl}/dashboard`;
 
   const login = async (provider: string) => {
     setIsLoading(true);

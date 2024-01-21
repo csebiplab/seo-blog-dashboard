@@ -9,8 +9,10 @@ export default function RemoveTagBtnComponent({ id }) {
   const removeTopic = async () => {
     const confirmed = confirm("Are you sure?");
 
+    const baseAPIUrl = process.env.BASE_API_URL
+
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/blogTag?id=${id}`, {
+      const res = await fetch(`${baseAPIUrl}/api/blogTag?id=${id}`, {
         method: "DELETE",
       });
 

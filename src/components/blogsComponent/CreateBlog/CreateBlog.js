@@ -12,6 +12,9 @@ function CreateBlog({ id, data }) {
     keywords: "",
     content: "",
   });
+
+  const baseAPIUrl = process.env.BASE_API_URL
+
   useEffect(() => {
     if (data) {
       const { blogDetailsData } = data;
@@ -39,7 +42,7 @@ function CreateBlog({ id, data }) {
     if (id) {
       let { title, description, keywords, content } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/blogContent/${id}`, {
+        const res = await fetch(`${baseAPIUrl}/api/blogContent/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json",
@@ -60,7 +63,7 @@ function CreateBlog({ id, data }) {
     } else {
       let { title, description, keywords, content } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/blogContent`, {
+        const res = await fetch(`${baseAPIUrl}/api/blogContent`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

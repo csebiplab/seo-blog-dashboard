@@ -21,9 +21,10 @@ const page = async ({ params }) => {
 export default page;
 
 const getConcreteDeliveryMetaDataById = async (id) => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
     const res = await fetch(
-      `http://localhost:3000/api/concreteDelivery/${id}`,
+      `${baseAPIUrl}/api/concreteDelivery/${id}`,
       {
         cache: "no-store",
       }

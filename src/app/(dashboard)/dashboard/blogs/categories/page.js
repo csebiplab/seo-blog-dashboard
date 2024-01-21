@@ -10,8 +10,9 @@ export default async function page() {
 }
 
 const getAllCategoryData = async () => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch("http://localhost:3000/api/blogCategory", {
+    const res = await fetch(`${baseAPIUrl}/api/blogCategory`, {
       cache: "no-store",
     });
 

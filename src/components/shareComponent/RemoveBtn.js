@@ -9,9 +9,11 @@ export default function RemoveBtn({ id, endPoints }) {
   const removeTopic = async () => {
     const confirmed = confirm("Are you sure?");
 
+    const baseAPIUrl = process.env.BASE_API_URL
+
     if (confirmed) {
       const res = await fetch(
-        `http://localhost:3000/api/${endPoints}?id=${id}`,
+        `${baseAPIUrl}/api/${endPoints}?id=${id}`,
         {
           method: "DELETE",
         }

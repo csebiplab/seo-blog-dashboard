@@ -8,8 +8,9 @@ const page = async ({ params }) => {
 export default page;
 
 const getBlogDataById = async (id) => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`http://localhost:3000/api/blogContent/${id}`, {
+    const res = await fetch(`${baseAPIUrl}/api/blogContent/${id}`, {
       cache: "no-store",
     });
 

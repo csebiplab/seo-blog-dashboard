@@ -19,8 +19,9 @@ const page = async () => {
 export default page;
 
 const getBlogMetaData = async () => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch("http://localhost:8080/api/blogs", {
+    const res = await fetch(`${base}/api/blogs`, {
       cache: "no-store",
     });
 

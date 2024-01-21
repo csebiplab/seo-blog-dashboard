@@ -11,6 +11,9 @@ function CreateUpdateTag({ id, data }) {
     slug: "",
     description: "",
   });
+
+  const baseAPIUrl = process.env.BASE_API_URL
+
   const handleInputChange = (eventKey, e) => {
     setInputValue((prevInputValue) => ({
       ...prevInputValue,
@@ -32,7 +35,7 @@ function CreateUpdateTag({ id, data }) {
     if (id) {
       let { name, slug, description } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/blogTag/${id}`, {
+        const res = await fetch(`${baseAPIUrl}/api/blogTag/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json",
@@ -53,7 +56,7 @@ function CreateUpdateTag({ id, data }) {
     } else {
       let { name, slug, description } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/blogTag`, {
+        const res = await fetch(`${baseAPIUrl}/api/blogTag`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

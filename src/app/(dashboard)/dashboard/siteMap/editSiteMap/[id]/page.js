@@ -13,8 +13,9 @@ const page = async ({ params }) => {
 export default page;
 
 const getSiteMapDataById = async (id) => {
+  const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`http://localhost:3000/api/siteMap/${id}`, {
+    const res = await fetch(`${baseAPIUrl}/api/siteMap/${id}`, {
       cache: "no-store",
     });
 

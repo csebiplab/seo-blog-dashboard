@@ -16,6 +16,8 @@ interface UserAccountNavProps {
 }
 
 export default function UserAccountNav({ user }: UserAccountNavProps) {
+  const baseAPIUrl = process.env.BASE_API_URL;
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="outline-none cursor-pointer" asChild>
@@ -32,7 +34,9 @@ export default function UserAccountNav({ user }: UserAccountNavProps) {
           {user.email && <p className="text-sm text-gray-1">{user.email}</p>}
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => signOut({ callbackUrl: "http://localhost:8080/" })}>
+        <DropdownMenuItem
+          onClick={() => signOut({ callbackUrl: `${baseAPIUrl}` })}
+        >
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>

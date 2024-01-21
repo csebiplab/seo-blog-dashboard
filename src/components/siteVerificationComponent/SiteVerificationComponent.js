@@ -19,7 +19,7 @@ function SiteVerificationComponent({
     url: "",
   });
 
-  const baseAPIUrl = "http://localhost:8080/api";
+  const baseAPIUrl = process.env.BASE_API_URL
 
   useEffect(() => {
     setInputValue({

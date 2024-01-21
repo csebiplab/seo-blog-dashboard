@@ -11,6 +11,9 @@ function CreateCategory({ id, data }) {
     slug: "",
     description: "",
   });
+
+  const baseAPIUrl = process.env.BASE_API_URL
+
   const handleInputChange = (eventKey, e) => {
     setInputValue((prevInputValue) => ({
       ...prevInputValue,
@@ -33,7 +36,7 @@ function CreateCategory({ id, data }) {
       let { name, slug, description } = inputValue;
       try {
         const res = await fetch(
-          `http://localhost:3000/api/blogCategory/${id}`,
+          `${baseAPIUrl}/api/blogCategory/${id}`,
           {
             method: "PUT",
             headers: {
@@ -56,7 +59,7 @@ function CreateCategory({ id, data }) {
     } else {
       let { name, slug, description } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/blogCategory`, {
+        const res = await fetch(`${baseAPIUrl}/api/blogCategory`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
