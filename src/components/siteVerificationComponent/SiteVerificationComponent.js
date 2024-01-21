@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import RemoveBtn from "../shareComponent/RemoveBtn";
 import { toast } from "react-toastify";
 import RemoveBtnComponent from "./RemoveButtonComponent";
+
 function SiteVerificationComponent({
   verificationUrl,
   id,
@@ -17,6 +18,9 @@ function SiteVerificationComponent({
     title: "",
     url: "",
   });
+
+  const baseAPIUrl = "http://localhost:8080/api";
+
   useEffect(() => {
     setInputValue({
       title: titleValue,
@@ -36,13 +40,13 @@ function SiteVerificationComponent({
       url: e.target.value,
     }));
   };
-  const endPoints = "/dashboard/siteVerification/editSiteVerification/";
+  // const endPoints = "/dashboard/siteVerification/editSiteVerification/";
   const handleSubmit = async () => {
     if (id) {
       let { title, url } = inputValue;
       try {
         const res = await fetch(
-          `http://localhost:3000/api/verificationUrl/${id}`,
+          `${baseAPIUrl}/verificationUrl/${id}`,
           {
             method: "PUT",
             headers: {
@@ -51,6 +55,8 @@ function SiteVerificationComponent({
             body: JSON.stringify({ title, url }),
           }
         );
+
+        console.log(res)
 
         if (res.ok) {
           toast(`Successfully updated verification url & meta data`);
@@ -65,7 +71,7 @@ function SiteVerificationComponent({
     } else {
       let { title, url } = inputValue;
       try {
-        const res = await fetch(`http://localhost:3000/api/verificationUrl`, {
+        const res = await fetch(`${baseAPIUrl}/verificationUrl`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -91,7 +97,7 @@ function SiteVerificationComponent({
         {/* <h3>BLogs</h3> */}
         {verificationUrl?.length > 0 && !id ? (
           <>
-            <div class="relative mt-4 overflow-x-auto shadow-md sm:rounded-lg">
+            <div className="relative mt-4 overflow-x-auto shadow-md sm:rounded-lg">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
@@ -181,7 +187,7 @@ function SiteVerificationComponent({
             </div>
             <button
               onClick={handleSubmit}
-              class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 my-5 px-5 border border-blue-500 hover:border-transparent rounded"
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 my-5 px-5 border border-blue-500 hover:border-transparent rounded"
             >
               {id ? "Update" : "Save"}
             </button>
