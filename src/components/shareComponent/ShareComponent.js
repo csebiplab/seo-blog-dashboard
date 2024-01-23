@@ -56,7 +56,7 @@ const ShareComponent = ({
       let { title, description, keywords } = inputValue;
       try {
         const res = await fetch(
-          `${baseAPIUrl}/api/${endPoints}/${id}`,
+          `/api/${endPoints}/${id}`,
           {
             method: "PUT",
             headers: {
@@ -79,7 +79,7 @@ const ShareComponent = ({
     } else {
       let { title, description, keywords } = inputValue;
       try {
-        const res = await fetch(`${baseAPIUrl}/api/${endPoints}`, {
+        const res = await fetch(`/api/${endPoints}`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

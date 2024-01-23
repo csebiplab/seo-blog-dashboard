@@ -13,7 +13,7 @@ export default function RemoveBlogBtnComponent({ id }) {
 
     if (confirmed) {
       const res = await fetch(
-        `${baseAPIUrl}/api/blogContent?id=${id}`,
+        `/api/blogContent?id=${id}`,
         {
           method: "DELETE",
         }

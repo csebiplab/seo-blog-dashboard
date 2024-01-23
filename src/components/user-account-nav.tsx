@@ -35,7 +35,7 @@ export default function UserAccountNav({ user }: UserAccountNavProps) {
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          onClick={() => signOut({ callbackUrl: `${baseAPIUrl}` })}
+          onClick={() => signOut({ callbackUrl: `` })}
         >
           Log out
         </DropdownMenuItem>

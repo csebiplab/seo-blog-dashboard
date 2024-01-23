@@ -23,7 +23,7 @@ export default Page;
 const getcontactMetaDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/contactUs/${id}`, {
+    const res = await fetch(`/api/contactUs/${id}`, {
       cache: "no-store",
     });
 

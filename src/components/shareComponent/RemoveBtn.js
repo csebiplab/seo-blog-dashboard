@@ -13,7 +13,7 @@ export default function RemoveBtn({ id, endPoints }) {
 
     if (confirmed) {
       const res = await fetch(
-        `${baseAPIUrl}/api/${endPoints}?id=${id}`,
+        `/api/${endPoints}?id=${id}`,
         {
           method: "DELETE",
         }

@@ -12,7 +12,7 @@ export default function RemoveTagBtnComponent({ id }) {
     const baseAPIUrl = process.env.BASE_API_URL
 
     if (confirmed) {
-      const res = await fetch(`${baseAPIUrl}/api/blogTag?id=${id}`, {
+      const res = await fetch(`/api/blogTag?id=${id}`, {
         method: "DELETE",
       });
 

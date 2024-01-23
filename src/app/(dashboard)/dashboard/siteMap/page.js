@@ -11,7 +11,7 @@ export default async function siteMap() {
 const getSitemapData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL;
   try {
-    const res = await fetch(`${baseAPIUrl}/api/siteMap`, {
+    const res = await fetch(`/api/siteMap`, {
       cache: "no-store",
     });
 

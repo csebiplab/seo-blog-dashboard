@@ -19,7 +19,7 @@ export default page;
 const getHomeMetaData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/home`, {
+    const res = await fetch(`/api/home`, {
       cache: "no-store",
     });
 

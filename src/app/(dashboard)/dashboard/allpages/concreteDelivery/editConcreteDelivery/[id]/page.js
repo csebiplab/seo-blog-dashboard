@@ -24,7 +24,7 @@ const getConcreteDeliveryMetaDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
     const res = await fetch(
-      `${baseAPIUrl}/api/concreteDelivery/${id}`,
+      `/api/concreteDelivery/${id}`,
       {
         cache: "no-store",
       }

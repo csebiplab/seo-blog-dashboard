@@ -36,7 +36,7 @@ function CreateCategory({ id, data }) {
       let { name, slug, description } = inputValue;
       try {
         const res = await fetch(
-          `${baseAPIUrl}/api/blogCategory/${id}`,
+          `/api/blogCategory/${id}`,
           {
             method: "PUT",
             headers: {
@@ -59,7 +59,7 @@ function CreateCategory({ id, data }) {
     } else {
       let { name, slug, description } = inputValue;
       try {
-        const res = await fetch(`${baseAPIUrl}/api/blogCategory`, {
+        const res = await fetch(`/api/blogCategory`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

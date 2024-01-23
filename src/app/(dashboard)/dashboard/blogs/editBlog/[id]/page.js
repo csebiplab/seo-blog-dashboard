@@ -10,7 +10,7 @@ export default page;
 const getBlogDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/blogContent/${id}`, {
+    const res = await fetch(`/api/blogContent/${id}`, {
       cache: "no-store",
     });
 

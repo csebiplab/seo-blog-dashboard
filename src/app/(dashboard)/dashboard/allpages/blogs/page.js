@@ -22,7 +22,7 @@ export default Page;
 const getBlogMetaData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/blogs`, {
+    const res = await fetch(`/api/blogs`, {
       cache: "no-store",
     });
 

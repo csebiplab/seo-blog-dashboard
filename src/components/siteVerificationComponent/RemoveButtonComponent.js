@@ -13,7 +13,7 @@ export default function RemoveBtnComponent({ id }) {
 
     if (confirmed) {
       const res = await fetch(
-        `${baseAPIUrl}/api/verificationUrl?id=${id}`,
+        `/api/verificationUrl?id=${id}`,
         {
           method: "DELETE",
         }

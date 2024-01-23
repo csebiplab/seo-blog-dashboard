@@ -12,7 +12,7 @@ export default page;
 const getAllTagDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/blogTag/${id}`, {
+    const res = await fetch(`/api/blogTag/${id}`, {
       cache: "no-store",
     });
 

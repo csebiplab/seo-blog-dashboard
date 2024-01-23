@@ -15,7 +15,7 @@ export default function AuthForm() {
   const baseAPIUrl = process.env.BASE_API_URL;
 
   // this is callback url after login
-  const callbackUrl = `${baseAPIUrl}/dashboard`;
+  const callbackUrl = `/dashboard`;
 
   const login = async (provider: string) => {
     setIsLoading(true);

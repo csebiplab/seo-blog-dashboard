@@ -19,7 +19,7 @@ export default page;
 const getTestimonialMetaData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/testimonials`, {
+    const res = await fetch(`/api/testimonials`, {
       cache: "no-store",
     });
 

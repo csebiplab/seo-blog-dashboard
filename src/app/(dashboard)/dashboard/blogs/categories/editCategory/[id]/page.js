@@ -15,7 +15,7 @@ export default page;
 const getAllCategoryDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/blogCategory/${id}`, {
+    const res = await fetch(`/api/blogCategory/${id}`, {
       cache: "no-store",
     });
 

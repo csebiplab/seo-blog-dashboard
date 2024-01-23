@@ -12,7 +12,7 @@ export default function RemoveBtnComponent({ id }) {
     const baseAPIUrl = process.env.BASE_API_URL
 
     if (confirmed) {
-      const res = await fetch(`${baseAPIUrl}/api/siteMap?id=${id}`, {
+      const res = await fetch(`/api/siteMap?id=${id}`, {
         method: "DELETE",
       });
 

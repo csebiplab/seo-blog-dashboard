@@ -11,7 +11,7 @@ export default async function SeoSiteVerification() {
 const getVerificationData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/verificationUrl`, {
+    const res = await fetch(`/api/verificationUrl`, {
       cache: "no-store",
     });
 

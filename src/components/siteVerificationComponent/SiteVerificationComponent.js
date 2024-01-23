@@ -46,7 +46,7 @@ function SiteVerificationComponent({
       let { title, url } = inputValue;
       try {
         const res = await fetch(
-          `${baseAPIUrl}/verificationUrl/${id}`,
+          `/verificationUrl/${id}`,
           {
             method: "PUT",
             headers: {
@@ -71,7 +71,7 @@ function SiteVerificationComponent({
     } else {
       let { title, url } = inputValue;
       try {
-        const res = await fetch(`${baseAPIUrl}/verificationUrl`, {
+        const res = await fetch(`/verificationUrl`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

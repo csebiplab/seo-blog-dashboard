@@ -15,7 +15,7 @@ export default page;
 const getVerificationMetaDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${baseAPIUrl}/api/verificationUrl/${id}`, {
+    const res = await fetch(`/api/verificationUrl/${id}`, {
       cache: "no-store",
     });
 

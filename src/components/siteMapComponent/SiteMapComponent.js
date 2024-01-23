@@ -38,7 +38,7 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
     if (id) {
       let { title, url } = inputValue;
       try {
-        const res = await fetch(`${baseAPIUrl}/api/siteMap/${id}`, {
+        const res = await fetch(`/api/siteMap/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json",
@@ -59,7 +59,7 @@ function SiteVerificationComponent({ sitemap, id, titleValue, urlValue }) {
     } else {
       let { title, url } = inputValue;
       try {
-        const res = await fetch(`${baseAPIUrl}/api/siteMap`, {
+        const res = await fetch(`/api/siteMap`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

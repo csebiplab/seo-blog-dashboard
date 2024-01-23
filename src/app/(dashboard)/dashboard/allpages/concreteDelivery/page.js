@@ -22,7 +22,7 @@ export default page;
 const getConcreteDeliveryMetaData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL;
   try {
-    const res = await fetch(`${baseAPIUrl}/api/concreteDelivery`, {
+    const res = await fetch(`/api/concreteDelivery`, {
       cache: "no-store",
     });
 
