@@ -3,8 +3,8 @@ import React from "react";
 
 const page = async ({ params }) => {
   const { id } = params;
-  const { verificationData } = await getVerificationMetaDataById(id);
-  const { title, url } = verificationData;
+  const { verificationData } = await getVerificationMetaDataById(id) ?? {};
+  const { title, url } = verificationData ?? {};
   return (
     <SiteVerificationComponent id={id} titleValue={title} urlValue={url} />
   );

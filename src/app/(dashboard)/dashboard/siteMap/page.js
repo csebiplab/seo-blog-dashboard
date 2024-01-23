@@ -1,6 +1,6 @@
 import SiteMapComponent from "@/components/siteMapComponent/SiteMapComponent";
 export default async function siteMap() {
-  const { sitemap } = await getSitemapData();
+  const { sitemap } = await getSitemapData() ?? {};
   return (
     <>
       <SiteMapComponent sitemap={sitemap} />

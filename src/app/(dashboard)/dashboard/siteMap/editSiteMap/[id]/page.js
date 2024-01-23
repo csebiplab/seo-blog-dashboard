@@ -5,7 +5,7 @@ const page = async ({ params }) => {
   const { id } = params;
   // console.log("siteMap data", await getSiteMapDataById(id));
   const sitemapData = await getSiteMapDataById(id);
-  const { title, url } = sitemapData;
+  const { title, url } = sitemapData ?? {};
   return <SiteMapComponent id={id} titleValue={title} urlValue={url} />;
   // return <SiteMapComponent id={id} titleValue={"dd"} urlValue={"dd"} />;
 };

@@ -2,7 +2,7 @@ import ShareComponent from "../../../../../components/shareComponent/ShareCompon
 const page = async () => {
   const editRoute = "dashboard/allpages/testimonials/editTestimonials";
   const endPoints = "testimonials";
-  const { testimonialRouteAllMetaData } = await getTestimonialMetaData();
+  const { testimonialRouteAllMetaData } = await getTestimonialMetaData() ?? {};
   return (
     <>
       <ShareComponent

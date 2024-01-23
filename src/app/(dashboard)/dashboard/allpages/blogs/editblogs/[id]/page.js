@@ -3,7 +3,7 @@ import React from "react";
 
 const page = async ({ params }) => {
   const { id } = params;
-  const { blogs } = await getblogMetaDataById(id);
+  const { blogs } = await getblogMetaDataById(id) ?? {};
   const endPoints = "blogs";
 
   const { title, description, keywords } = blogs;

@@ -2,7 +2,7 @@ import ShareComponent from "../../../../../components/shareComponent/ShareCompon
 const page = async () => {
   const editRoute = "dashboard/allpages/contactUs/editContactUs";
   const endPoints = "contactUs";
-  const { contactRouteAllMetaData } = await getContactMetaData();
+  const { contactRouteAllMetaData } = await getContactMetaData() ?? {};
   // revalidatePath("/");
   return (
     <>

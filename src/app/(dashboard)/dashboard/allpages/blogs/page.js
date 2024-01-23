@@ -1,9 +1,10 @@
-
 import ShareComponent from "../../../../../components/shareComponent/ShareComponent";
-const page = async () => {
+
+
+const Page = async () => {
   const editRoute = "dashboard/allpages/blogs/editblogs";
   const endPoints = "blogs";
-  const { blogRouteAllMetaData } = await getBlogMetaData();
+  const { blogRouteAllMetaData } = await getBlogMetaData() ?? {};
   // revalidatePath("/");
   return (
     <>
@@ -16,12 +17,12 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;
 
 const getBlogMetaData = async () => {
   const baseAPIUrl = process.env.BASE_API_URL
   try {
-    const res = await fetch(`${base}/api/blogs`, {
+    const res = await fetch(`${baseAPIUrl}/api/blogs`, {
       cache: "no-store",
     });
 

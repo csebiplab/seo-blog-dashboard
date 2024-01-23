@@ -4,7 +4,7 @@ const page = async () => {
   const editRoute = "dashboard/allpages/concreteDelivery/editConcreteDelivery";
   const endPoints = "concreteDelivery";
   const { concreteDeliveryRouteAllMetaData } =
-    await getConcreteDeliveryMetaData();
+    await getConcreteDeliveryMetaData() ?? {};
   // revalidatePath("/");
   return (
     <>

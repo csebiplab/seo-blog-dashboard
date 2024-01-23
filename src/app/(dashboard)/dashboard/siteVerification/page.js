@@ -1,6 +1,6 @@
 import SiteVerificationComponent from "@/components/siteVerificationComponent/SiteVerificationComponent";
 export default async function SeoSiteVerification() {
-  const { verificationUrl } = await getVerificationData();
+  const { verificationUrl } = await getVerificationData() ?? {};
   return (
     <>
       <SiteVerificationComponent verificationUrl={verificationUrl} />

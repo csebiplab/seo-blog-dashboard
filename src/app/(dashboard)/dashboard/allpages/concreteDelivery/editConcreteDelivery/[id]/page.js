@@ -1,9 +1,9 @@
 import ShareComponent from "@/components/shareComponent/ShareComponent";
 import React from "react";
 
-const page = async ({ params }) => {
+const Page = async ({ params }) => {
   const { id } = params;
-  const { concreteDelivery } = await getConcreteDeliveryMetaDataById(id);
+  const { concreteDelivery } = await getConcreteDeliveryMetaDataById(id) ?? {};
   const endPoints = "concreteDelivery";
 
   const { title, description, keywords } = concreteDelivery;
@@ -18,7 +18,7 @@ const page = async ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
 
 const getConcreteDeliveryMetaDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL

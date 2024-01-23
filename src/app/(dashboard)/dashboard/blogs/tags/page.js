@@ -2,7 +2,7 @@ import React from "react";
 import CreateUpdateTag from "../../../../../components/blogsComponent/CreateUpdateTag/CreateUpdateTag";
 import TagList from "../../../../../components/blogsComponent/TagList/TagList";
 export default async function page() {
-  const { blogTags } = await getAllTagData();
+  const { blogTags } = await getAllTagData() ?? {};
   return (
     <div>
       <TagList allTaglist={blogTags} />

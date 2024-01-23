@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryList from "@/components/blogsComponent/CategoryList/CategoryList";
 export default async function page() {
-  const { blogCategories } = await getAllCategoryData();
+  const { blogCategories } = await getAllCategoryData() ?? {};
   return (
     <div>
       <CategoryList allCategorylist={blogCategories} />

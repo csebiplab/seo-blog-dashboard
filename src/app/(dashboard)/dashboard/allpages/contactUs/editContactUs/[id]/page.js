@@ -1,9 +1,9 @@
 import ShareComponent from "@/components/shareComponent/ShareComponent";
 import React from "react";
 
-const page = async ({ params }) => {
+const Page = async ({ params }) => {
   const { id } = params;
-  const { contactUs } = await getcontactMetaDataById(id);
+  const { contactUs } = await getcontactMetaDataById(id) ?? {};
   const endPoints = "contactUs";
 
   const { title, description, keywords } = contactUs;
@@ -18,7 +18,7 @@ const page = async ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
 
 const getcontactMetaDataById = async (id) => {
   const baseAPIUrl = process.env.BASE_API_URL
